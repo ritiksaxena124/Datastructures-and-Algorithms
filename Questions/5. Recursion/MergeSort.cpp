@@ -10,7 +10,7 @@ void merge(int *arr, int s, int e, int mid)
     int temp1[len1];
     int temp2[len2];
     int k = s;
-    for (int i = s; i < len1; i++)
+    for (int i = 0; i < len1; i++)
     {
         temp1[i] = arr[k++];
     }
