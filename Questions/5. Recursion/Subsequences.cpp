@@ -42,7 +42,6 @@ int main()
     int idx = 0;
 
     vector<string> ans = subsequences(s);
-    sort(ans.begin(),ans.end());
     for (auto i : ans)
     {
         cout << i << " ";
