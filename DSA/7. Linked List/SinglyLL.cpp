@@ -1,4 +1,5 @@
 using namespace std;
+
 class Node
 {
 public:
@@ -13,7 +14,7 @@ public:
         this->data = data;
         next = nullptr;
     }
-} *head = nullptr, *tail = NULL; // INITIALLY HEAD & TAIL IS POINTING TO NULL
+} *head = nullptr, *tail = nullptr; // INITIALLY HEAD & TAIL IS POINTING TO NULL
 
 int length()
 {
@@ -79,6 +80,63 @@ void insertAtPosition(int pos, int val)
     newNode->next = temp->next;
     temp->next = newNode;
 }
+// DELETION IN SINGLY LINKED LIST
+
+// 1. DELETION FROM START
+void deleteAtStart()
+{
+    if (head == NULL)
+        return;
+    Node *temp = head;
+    head = head->next;
+    delete temp;
+}
+
+// 2. DELETION FROM end
+void deleteAtEnd()
+{
+    if (head == NULL)
+        return;
+
+    if (tail == head)
+    {
+        head = NULL;
+        delete tail;
+    }
+
+    Node *temp = head;
+    while (temp->next != tail)
+        temp = temp->next;
+    temp->next = NULL;
+    delete tail;
+    tail = temp;
+}
+
+// 3. DELETE AT POSITION
+void deleteAtPosition(int pos)
+{
+    int sz = length();
+    if (pos > sz)
+        return;
+    if (sz == pos)
+    {
+        deleteAtEnd();
+        return;
+    }
+    if (pos == 1)
+    {
+        deleteAtStart();
+        return;
+    }
+
+    Node *temp = head;
+    for(int i = 1; i<pos-1; i++){
+        temp = temp->next;
+    }
+    Node *nodeToBeDeleted = temp->next;
+    temp->next = nodeToBeDeleted->next;
+    delete nodeToBeDeleted;
+}
 
 // PRINT THE SINGLY LINKED LIST
 void print()
@@ -89,4 +147,5 @@ void print()
         cout << temp->data << " ";
         temp = temp->next;
     }
+    cout << endl;
 }
