@@ -6,3 +6,4 @@ This repository consist of the code samples of Datastructure and Algorithms alon
 - Maths for DSA
 - Recursion
 - Binary Search
+- Linked List
