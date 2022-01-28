@@ -7,3 +7,4 @@ This repository consist of the code samples of Datastructure and Algorithms alon
 - Recursion
 - Binary Search
 - Linked List
+- Stacks and Queues
