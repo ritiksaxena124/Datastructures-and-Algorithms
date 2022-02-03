@@ -18,6 +18,7 @@ int rightMostSetBit(int n)
         }
     }
     */
+//    log2(n & -n) => gives the number of 0's after the set bit
     int pos = log2(n & -n) + 1;
     return pos;
 }
