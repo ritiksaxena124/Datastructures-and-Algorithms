@@ -8,3 +8,4 @@ This repository consist of the code samples of Datastructure and Algorithms alon
 - Binary Search
 - Linked List
 - Stacks and Queues
+- Bit Manipulation & Number System
