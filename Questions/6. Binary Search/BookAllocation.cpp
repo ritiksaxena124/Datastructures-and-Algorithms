@@ -1,3 +1,5 @@
+// https://www.codingninjas.com/codestudio/problems/allocate-books_1090540?leftPanelTab=0
+
 #include <iostream>
 using namespace std;
 
@@ -18,7 +20,7 @@ bool isPossible(int arr[], int books, int student, int maxAlloc)
     return true;
 }
 
-int minPages(int arr[], int n, int students)
+int allocateBooks(int arr[], int n, int m)
 {
     int sum = 0;
     for (int i = 0; i < n; i++)
@@ -31,7 +33,7 @@ int minPages(int arr[], int n, int students)
     while (s <= e)
     {
         int mid = s + (e - s) / 2;
-        if (isPossible(arr, n, students, mid))
+        if (isPossible(arr, n, m, mid))
         {
             ans = mid;
             e = mid - 1;
@@ -49,6 +51,6 @@ int main()
     int pages[] = {10, 20, 30, 40};
     int students = 2;
     int n = sizeof(pages)/sizeof(int);
-    cout << minPages(pages, n, students);
+    cout << allocateBooks(pages, n, students);
     return 0;
 }
